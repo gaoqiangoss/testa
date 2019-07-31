@@ -1,0 +1,19 @@
+occi连接oracle  
+#include <occi.h>
+using namespace oracle::occi
+
+//初始化环境
+Environment *env = Environment::createEnvironment();
+//准备用户名、密码、数据库地址，  创建连接
+Connection *conn = env->createConnection(username, password, constr);
+//执行sql语句的对象
+Statement *stat= conn->createStatement();
+string sql = "select * from dept";
+stat->setSQL(sql);
+
+//执行sql
+ResultSet *set= stat->executeQuery(sql);
+
+//对结果处理 
+
+//释放对象

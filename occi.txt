@@ -17,3 +17,4 @@ ResultSet *set= stat->executeQuery(sql);
 //对结果处理 
 
 //释放对象
+85656
